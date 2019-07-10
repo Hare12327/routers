@@ -8,6 +8,9 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
+    <sub-flow name="muleroutrsSub_Flow">
+        <logger level="INFO" doc:name="Logger"/>
+    </sub-flow>
    
     <flow name="muleroutersFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/routers" doc:name="HTTP"/>
